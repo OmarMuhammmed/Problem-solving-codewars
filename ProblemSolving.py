@@ -143,7 +143,11 @@ def shortcut( s ):
     return "".join(sol)
     # anthor solution
     return ''.join(c for c in s if c not in 'aeiou')    
-                
+
+# 15. Convert a String to a Number! ==> codewares 
+def string_to_number(s):
+    return int(s)
+              
    
         
     
