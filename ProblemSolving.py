@@ -93,6 +93,7 @@ def monkey_count(n):
     return  My_list  
     # anthor Solution
     return list(range(1,n+1)) 
+
 # 10.Gravity Flip ==> codewares
 def flip(d, a):
     if d == "R":
@@ -148,7 +149,24 @@ def shortcut( s ):
 def string_to_number(s):
     return int(s)
               
-   
+# 16.Coloured Triangles ==> codewares(MidLevel)
+def triangle(row):
+    while len(row) > 1:
+        new_row = ''
+        for i in range(len(row) - 1):
+            pair = row[i:i+2]
+            if pair == "RR" or pair == "GG" or pair == "BB":
+                new_row += pair[0]
+            elif "R" in pair and "G" in pair:
+                new_row += "B"
+            elif "R" in pair and "B" in pair:
+                new_row += "G"
+            elif "G" in pair and "B" in pair:
+                new_row += "R"
+        row = new_row
+    return row
+      
+    
         
     
     
