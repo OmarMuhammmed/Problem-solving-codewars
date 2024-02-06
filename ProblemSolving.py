@@ -166,7 +166,15 @@ def triangle(row):
         row = new_row
     return row
       
-    
+# 17.Remove First and Last Character ==> codewares
+def remove_char(s):
+    return s[1:-1]
+
+# 18.Sum of array singles ==> codewares 
+def repeats(arr):
+    return sum([x for x in arr if arr.count(x) == 1])
+
+   
         
     
     
