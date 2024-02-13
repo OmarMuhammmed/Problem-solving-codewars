@@ -173,9 +173,26 @@ def remove_char(s):
 # 18.Sum of array singles ==> codewares 
 def repeats(arr):
     return sum([x for x in arr if arr.count(x) == 1])
-
-   
-        
+# 19.Shortest Word ==>codewares 
+def find_short(s):
+    short = s.split()
+    short1 = min(short,key=len)
+    l = len(short1)   
+    return l # l: shortest word length
     
-    
+# 20.Beginner Series #3 Sum of Numbers ==> codewares
+def get_sum(a,b):
+  sol = []
+  if a >= b :  
+    for I in range(b, a+1) :
+      sol.append(I)
 
+  elif a <= b :
+    for I in range(a, b+1) :
+      sol.append(I)
+
+  elif a == b :
+      sol.append(a)    
+  
+  return  sum(sol)  
+            
