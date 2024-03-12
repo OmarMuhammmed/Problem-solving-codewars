@@ -205,3 +205,27 @@ def to_jaden_case(string):
   return " ".join(cap_words) 
   # anthor solution 
   return ' '.join(word.capitalize() for word in string.split())
+
+# 22.You're a square! ==> codewares
+def is_square(n):    
+    import math
+    squre_root = math.sqrt(n)
+    return squre_root.is_integer()
+
+# 23.Remove the minimum ==> codewares
+def remove_smallest(numbers):
+    a = numbers[:]
+    if a:
+        a.remove(min(a))
+    return a
+print(remove_smallest([5, 3, 2, 1, 4]))  
+
+# 24.
+def filter_list(l):
+  sol = []
+  for i in l :
+      if type(i) is int :
+          sol.append(i)   
+      else:
+          continue    
+  return sol     
