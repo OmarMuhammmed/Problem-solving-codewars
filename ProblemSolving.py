@@ -218,7 +218,7 @@ def remove_smallest(numbers):
     if a:
         a.remove(min(a))
     return a
-print(remove_smallest([5, 3, 2, 1, 4]))  
+
 
 # 24.
 def filter_list(l):
@@ -229,3 +229,90 @@ def filter_list(l):
       else:
           continue    
   return sol     
+
+# 25.Difference of 2 ==> codewares 
+def twos_difference(lst):
+    # Step 1: Sort the array
+    lst.sort()
+    
+    # Step 2: Initialize an empty list to store pairs
+    pairs = []
+    
+    # Step 3: Iterate over the array
+    for i in range(len(lst)):
+        # Check if arr[i]+2 exists in the array
+        if lst[i] + 2 in lst:
+            # If so, add the pair to the list
+            pairs.append((lst[i], lst[i] + 2))
+    
+    # Step 4: Return the sorted list of pairs
+    return pairs
+
+# 26.Backspaces in string ==> codewares
+def clean_string(s):
+    sol = []
+    for char in s :
+        if char !='#' : 
+            sol.append(char)      
+        else :
+            sol.pop() 
+    return ''.join(sol)
+
+# 27.Sort the number sequence ==> codewares
+def sort_sequence(sequence):
+    sub_sequences = []
+    ints = []
+    for num in sequence:
+        if num != 0:
+            ints.append(num)
+        else:
+            ints.append(0)
+            sub_sequences.append(ints)
+            ints = []
+
+    for sub_seq in sub_sequences:
+        sub_seq[:-1] = sorted(sub_seq[:-1])
+
+    sub_sequences.sort(key=lambda x: sum(x[:-1]))
+
+    result = [num for sub_seq in sub_sequences for num in sub_seq]
+
+    return result
+    # anthor sol 
+    # temp = []
+    # ls2 = []
+    # for i in sequence:
+    #     if i != 0:
+    #         temp.append(i)
+    #     else:
+    #         ls2.append(sorted(temp))
+    #         temp = []
+    # ls3 = []
+    # for i in sorted(ls2, key=lambda x: sum(x)):
+    #     ls3 += i + [0]
+
+
+
+# 28.Complementary DNA ==> codewares 
+def DNA_strand(dna):
+    reference = { "A":"T",
+                  "T":"A",
+                  "C":"G",
+                  "G":"C"
+                  }
+    return "".join([reference[x] for x in dna])   
+    
+
+# 29.Break camelCase ==> codeware
+def solution(s):
+    result = [] 
+    for l in s:
+        if l.isupper():
+            result.append(f' {l}')
+        else:
+            result.append(l)
+    return "".join(result)
+            
+
+
+
