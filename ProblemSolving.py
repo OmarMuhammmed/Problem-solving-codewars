@@ -314,5 +314,39 @@ def solution(s):
     return "".join(result)
             
 
+# 30.Count of positives / sum of negatives 
+def count_positives_sum_negatives(arr):
+    if not arr:
+        return []
+    
+    pos_num = 0
+    nig_num = 0
+
+    for num in arr:
+        if num > 0:
+            pos_num += 1
+        elif num < 0:
+            nig_num += num
+
+    return [pos_num, nig_num]
+
+
+
+
+# 31. Python's Dynamic Classes #2 
+class ReNameAbleClass(object):
+    @classmethod
+    def change_class_name(cls, new_name):
+       
+        if new_name[0].isupper() and new_name.isalnum():
+            cls.__name__ = new_name
+
+        else:
+            raise ValueError("The class name must start with an uppercase letter and contain only alphanumeric characters.")
+    
+    @classmethod
+    def __str__(cls):
+    
+        return f"Class name is: {cls.__name__}"
 
 
